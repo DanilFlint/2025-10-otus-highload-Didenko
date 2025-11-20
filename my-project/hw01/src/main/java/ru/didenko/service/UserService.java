@@ -1,0 +1,15 @@
+package ru.didenko.service;
+
+import ru.didenko.domain.User;
+
+import java.util.List;
+
+public interface UserService {
+
+    Integer insert(User user);
+
+    User getById(long id);
+
+    List<User> getAll();
+
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Главная страница</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1 th:if="${#authorization.expression('isAnonymous()')}">Добро пожаловать в приложение!</h1>
+<h1 th:if="${#authorization.expression('isAuthenticated()')}">Добро пожаловать в приложение, <span th:text = "${#authorization.getAuthentication().getName()}"></span> </h1>
+
+<div class="button-container">
+    <a th:href="@{mvc/users}">
+        <button type="button" class="styled-button">Список пользователей</button>
+    </a>
+
+    <a th:href="@{mvc/user/register}" th:if="${#authorization.expression('isAnonymous()')}">
+        <button type="button" class="styled-button">Регистрация</button>
+    </a>
+
+    <a th:href="@{/login}" th:if="${#authorization.expression('isAnonymous()')}">
+        <button type="button" class="styled-button">Войти</button>
+    </a>
+    <a th:href="@{/logout}" th:if="${#authorization.expression('isAuthenticated()')}">
+        <button type="button" class="styled-button">Выйти</button>
+    </a>
+</div>
+</body>
+</html>
