@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Информация о пользователе</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="form-container">
+    <form id="edit-form" th:object="${user}">
+        <h3>Информация о пользователе:</h3>
+
+        <div class="form-row">
+            <label for="username">Имя: </label>
+            <input type="text" id="username" name="username" th:value="*{username}" readonly/>
+        </div>
+
+        <div class="form-row">
+            <label for="lastname">Фамилия: </label>
+            <input type="text" id="lastname" name="lastname" th:value="*{lastname}" readonly/>
+        </div>
+
+        <div class="form-row">
+            <label for="dateOfBirth">Дата рождения: </label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" th:value="*{dateOfBirth}" readonly/>
+        </div>
+
+        <div class="form-row">
+            <label for="city">Город: </label>
+            <input type="text" id="city" name="city" th:value="*{city}" readonly/>
+        </div>
+
+        <div class="form-row">
+            <label for="gender">Пол: </label>
+            <input type="text" id="gender" name="gender" th:value="*{gender}" readonly/>
+        </div>
+
+        <div class="form-row">
+            <label for="interests">Интересы: </label>
+            <input type="text" id="interests" name="interests" th:value="*{interests}" readonly/>
+        </div>
+
+        <a th:href="@{/mvc/users}">
+            <button type="button" class="styled-button">К списку</button>
+        </a>
+    </form>
+</div>
+</body>
+</html>

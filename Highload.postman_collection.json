@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "3cf4e971-4540-4e0d-8e80-a380a8bacddc",
+		"name": "Highload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50227051",
+		"_collection_link": "https://d-didenko-4233812.postman.co/workspace/Danil-Didenko's-Workspace~18a9bf33-0c36-49b3-8159-3e87a7bc2381/collection/50227051-3cf4e971-4540-4e0d-8e80-a380a8bacddc?action=share&source=collection_link&creator=50227051"
+	},
+	"item": [
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/users/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "ID пользователя"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Id",
+							"value": "",
+							"description": "ID пользователя",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "",
+							"description": "Пароль",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "1111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/logout",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/users",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Владимир",
+							"description": "Имя пользователя",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Кукушкин",
+							"description": "Фамилия пользователя",
+							"type": "text"
+						},
+						{
+							"key": "dateOfBirth",
+							"value": "23-02-2013",
+							"description": "День рождения пользователя",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Москва",
+							"description": "Город проживания",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "Пол (Male/Female)",
+							"type": "text"
+						},
+						{
+							"key": "interests",
+							"value": "Люблю футбол",
+							"description": "Личная информация",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "Пароль",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/user/register",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
