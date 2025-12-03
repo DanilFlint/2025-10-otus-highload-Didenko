@@ -10,6 +10,8 @@ public interface UserRepository {
 
     User findById(long id);
 
+    List<User> findByNameAndLastname(String username, String lastname);
+
     List<User> findAll();
 
     void deleteById(long id);

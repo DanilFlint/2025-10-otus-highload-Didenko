@@ -10,6 +10,16 @@
 		{
 			"name": "Get User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -35,6 +45,21 @@
 		{
 			"name": "Login",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -42,13 +67,13 @@
 					"formdata": [
 						{
 							"key": "Id",
-							"value": "",
+							"value": "1",
 							"description": "ID пользователя",
 							"type": "text"
 						},
 						{
 							"key": "Password",
-							"value": "",
+							"value": "1111",
 							"description": "Пароль",
 							"type": "text"
 						}
@@ -61,6 +86,55 @@
 					],
 					"path": [
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Id",
+							"value": "1",
+							"description": "ID пользователя",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "1111",
+							"description": "Пароль",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/token",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"token"
 					]
 				}
 			},
@@ -104,6 +178,16 @@
 		{
 			"name": "Get Users",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -179,6 +263,44 @@
 						"api",
 						"user",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Name and Lastname",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/users/search?first_name=&last_name=",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": ""
+						},
+						{
+							"key": "last_name",
+							"value": ""
+						}
 					]
 				}
 			},

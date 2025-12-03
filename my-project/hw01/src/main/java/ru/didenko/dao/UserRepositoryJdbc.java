@@ -61,6 +61,23 @@ public class UserRepositoryJdbc implements UserRepository {
     }
 
     @Override
+    public List<User> findByNameAndLastname(String username, String lastname) {
+        String namePattern = username + "%";
+        String lastnamePattern = lastname + "%";
+
+        return namedParameterJdbcOperations.query("SELECT " +
+                        "id, name, lastname, dateOfBirth, city, gender, interests, password " +
+                        "FROM users " +
+                        "WHERE lastname LIKE :lastnamePattern AND name LIKE :namePattern",
+                Map.of(
+                        "lastnamePattern", lastnamePattern,
+                        "namePattern", namePattern
+                ),
+                new UserMapper()
+        );
+    }
+
+    @Override
     public List<User> findAll() {
         return namedParameterJdbcOperations.query("select id, name, lastname, dateOfBirth, city, gender, interests, password from users", new UserMapper());
     }

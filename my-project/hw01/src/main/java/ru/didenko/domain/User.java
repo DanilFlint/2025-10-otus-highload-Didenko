@@ -54,6 +54,16 @@ public class User implements UserDetails {
         return password;
     }
 
+    public UserDTO toDto() {
+        return UserDTO.builder()
+                .id(id)
+                .username(username)
+                .lastname(lastname)
+                .dateOfBirth(dateOfBirth)
+                .city(city)
+                .build();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
