@@ -52,7 +52,7 @@
 ### Сравнение до и после оптимизации
 1. 1 пользователь  
 До:  
-![img.png](img/img.png)
+![img.png](img/img.png)  
 Latency: 135ms  
 Throughput: 7.4/sec  
 Время выполнения: < 1 sec  
@@ -62,19 +62,19 @@ Latency: 8ms
 Throughput: 125.0/sec  
 Время выполнения: < 1 sec  
 2. 10 пользователей  
-До:
-![img_1.png](img/img_1.png)
+До:  
+![img_1.png](img/img_1.png)  
 Latency: 610ms  
 Throughput: 16.4/sec  
-Время выполнения: < 1 sec
-После:
+Время выполнения: < 1 sec  
+После:  
 ![img_5.png](img/img_5.png)  
 Latency: 17ms  
 Throughput: 588.2/sec  
-Время выполнения: < 1 sec
+Время выполнения: < 1 sec  
 3. 100 пользователей  
-До:
-![img_2.png](img/img_2.png)
+До:  
+![img_2.png](img/img_2.png)  
 Latency: 5534ms  
 Throughput: 18.0/sec  
 Время выполнения: 5 sec  
@@ -82,10 +82,10 @@ Throughput: 18.0/sec
 ![img_6.png](img/img_6.png)  
 Latency: 115ms  
 Throughput: 699.3/sec  
-Время выполнения: < 1 sec
+Время выполнения: < 1 sec  
 4. 1000 пользователей  
 До:  
-![img_3.png](img/img_3.png)
+![img_3.png](img/img_3.png)  
 Latency: 53587ms  
 Throughput: 18.4/sec  
 Время выполнения: 57 sec   
