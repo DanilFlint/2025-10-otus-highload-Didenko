@@ -17,11 +17,13 @@ services:
     depends_on:
       - db
 
-    restart: always
+    restart: no
 
   db:
     image: postgres:latest
     container_name: highload-db-container
+    volumes:
+      - postgres_data:/var/lib/postgresql
 
     environment:
       POSTGRES_DB: mydatabase
@@ -30,4 +32,7 @@ services:
 
     ports:
       - "5432:5432"
-    restart: always
+    restart: no
+volumes:
+  postgres_data:
+    driver: local

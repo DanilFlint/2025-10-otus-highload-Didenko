@@ -8,4 +8,8 @@ spring:
     init:
       mode: always
       schema-locations: classpath:schema.sql
+jwt:
+  private.key: classpath:app.key
+  public.key: classpath:app.pub
+
 

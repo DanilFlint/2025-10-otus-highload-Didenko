@@ -10,6 +10,8 @@ public interface UserService {
 
     User getById(long id);
 
+    List<User> getByNameAndLastname(String name, String lastname);
+
     List<User> getAll();
 
 }

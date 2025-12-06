@@ -24,6 +24,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> getByNameAndLastname(String name, String lastname) {
+        return userRepository.findByNameAndLastname(name, lastname);
+    }
+
+    @Override
     public List<User> getAll() {
         return userRepository.findAll();
     }
