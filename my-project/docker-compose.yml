@@ -18,6 +18,8 @@ services:
       - db
 
     restart: no
+    networks:
+    - backend-network
 
   db:
     image: postgres:latest
@@ -33,6 +35,25 @@ services:
     ports:
       - "5432:5432"
     restart: no
+    networks:
+    - backend-network
+  cache:
+    image: redis:latest
+    container_name: highload-cache-container
+    command: [
+      "redis-server",
+      "--save", "",
+      "--appendonly", "no",
+      "--maxmemory", "20mb",
+      "--maxmemory-policy", "allkeys-lru"
+    ]
+    ports:
+    - "6379:6379"
+    networks:
+    - backend-network
 volumes:
   postgres_data:
     driver: local
+networks:
+  redis-network:
+  backend-network:
