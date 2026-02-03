@@ -8,7 +8,7 @@ public interface UserService {
 
     Integer insert(User user);
 
-    User getById(long id);
+    User getById(Long id);
 
     List<User> getByNameAndLastname(String name, String lastname);
 

@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class User implements UserDetails {
 
-    private long id;
+    private Long id;
 
     private String username;
 

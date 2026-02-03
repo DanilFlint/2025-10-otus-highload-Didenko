@@ -1,9 +1,10 @@
-package ru.didenko.service;
+package ru.didenko.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.didenko.dao.UserRepository;
 import ru.didenko.domain.User;
+import ru.didenko.repository.UserRepository;
+import ru.didenko.service.UserService;
 
 import java.util.List;
 
@@ -19,8 +20,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getById(long id) {
-        return userRepository.findById(id);
+    public User getById(Long id) {
+        return userRepository.findById(id).orElseThrow();
     }
 
     @Override
